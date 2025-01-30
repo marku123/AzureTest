@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Simple Website</title>
     <style>
+        /* Global Styles */
         body {
             font-family: 'Calibri', sans-serif;
             margin: 0;
@@ -12,7 +13,10 @@
             display: flex;
             flex-direction: column;
             height: 100vh;
+            overflow-x: hidden; /* Prevents horizontal scrolling */
         }
+
+        /* Header */
         header {
             background: #2e5b85;
             color: white;
@@ -20,22 +24,28 @@
             text-align: left;
             font-size: 24px;
         }
+
+        /* Horizontal Navigation */
         nav.horizontal {
             background: #d9dee3;
             padding: 10px;
             text-align: left;
-            margin-top: 0;
         }
+
         nav.horizontal a {
             color: #2e5b85;
             text-decoration: none;
             margin: 0 15px;
             font-size: 18px;
         }
+
+        /* Layout Container */
         .container {
             display: flex;
             flex: 1;
         }
+
+        /* Sidebar */
         .sidebar {
             width: 200px;
             background: #ececec;
@@ -48,72 +58,78 @@
             margin: 10px;
             border-radius: 5px;
         }
+
         .sidebar a {
             display: block;
             padding: 10px;
             text-decoration: none;
             color: #2e5b85;
         }
+
         .sidebar a:hover {
             background: #bbb;
         }
+
+        /* Main Content */
         .content {
             flex: 1;
             padding: 20px;
             margin-left: 230px;
+            max-width: 100%; /* Ensures content does not exceed screen width */
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            box-sizing: border-box; /* Ensures padding/margins don't exceed width */
         }
+
         .content h2 {
             color: #2e5b85;
         }
 
-body {
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-}
-
-.content {
-    max-width: 100%; /* Ensures content does not exceed screen width */
-    overflow-wrap: break-word; /* Wraps long text */
-    word-wrap: break-word;
-    box-sizing: border-box; /* Ensures padding/margins don't exceed width */
-}
-
-iframe {
-    max-width: 100%; /* Ensures iframe scales with the screen */
-    width: 100%; /* Forces iframe to fit within content area */
-    height: auto; /* Adjusts height to maintain aspect ratio */
-}
-
-        
+        /* Responsive Iframe */
+        iframe {
+            max-width: 100%; /* Ensures iframe scales with the screen */
+            width: 100%; /* Forces iframe to fit within content area */
+            height: auto; /* Adjusts height to maintain aspect ratio */
+        }
     </style>
 </head>
 <body>
+
     <header>Quantitative Intelligence for the Protection of Civilians in Armed Conflict</header>
+
     <nav class="horizontal">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
     </nav>
+
     <div class="container">
+        <!-- Sidebar Navigation -->
         <div class="sidebar">
             <a href="#link1">Sidebar Link 1</a>
             <a href="#link2">Sidebar Link 2</a>
             <a href="#link3">Sidebar Link 3</a>
             <a href="#link4">Sidebar Link 4</a>
         </div>
+
+        <!-- Main Content Area -->
         <div class="content">
             <h2>3. Recent Levels of Violent Events Targeting Civilians, May 2022 to May 2023</h2>
             <p>This is the main content area where you can add text, images, or media.</p>
+
             <ul>
                 <li>The State of Palestine, Syria, Ukraine, Myanmar, and Somalia are the top five countries that are in the midst of a humanitarian crisis and are also experiencing high levels of anti-civilian violence.</li>
                 <li>These five countries are among the top 15 in the world with respect to political anti-civilian violence.</li>
             </ul>
 
-            
             <!-- Embedded Power BI iframe -->
-<iframe title="ACLED v2b" width="1200" height="1350" src="https://app.powerbi.com/view?r=eyJrIjoiMzZhM2YyODctZjk4NS00NmFkLWI5OTctZjEwODViNzJhMjc2IiwidCI6IjU5OGZlMjc1LTNlZTAtNDgxYy1hYTBmLTAyYWQxNjE4YzBkMyJ9" frameborder="0" allowFullScreen="true"></iframe>
-
+            <iframe title="ACLED v2b" width="1200" height="1350" 
+                src="https://app.powerbi.com/view?r=eyJrIjoiMzZhM2YyODctZjk4NS00NmFkLWI5OTctZjEwODViNzJhMjc2IiwidCI6IjU5OGZlMjc1LTNlZTAtNDgxYy1hYTBmLTAyYWQxNjE4YzBkMyJ9" 
+                frameborder="0" allowFullScreen="true">
+            </iframe>
         </div>
     </div>
+
 </body>
 </html>
